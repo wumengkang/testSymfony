@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Blog API
+            description: Blog API 文档
+            version: 1.0.0
+    areas:
+        path_patterns:
+            - ^/blog
