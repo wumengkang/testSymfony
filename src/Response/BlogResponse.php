@@ -11,6 +11,6 @@ class BlogResponse{
     #[OA\Property(description: '内容', example: 'This is the blog content.')]
     public string $content;
 
-    #[OA\Property(description: 'ID', example: 1)]
-    public int $id;
+    #[OA\Property(description: '老师名称', example: '老师')]
+    public string $teacherName;
 }

@@ -43,6 +43,7 @@ class BlogController extends AbstractController
     public function add(Request $request, SerializerInterface $serializer, ValidatorInterface $validator): Response
     {
         $jsonData = $request->getContent();
+        /** @var BlogRequest $blog */
         $blog = $serializer->deserialize($jsonData, BlogRequest::class, 'json');
 
         $errors = $validator->validate($blog);
@@ -54,7 +55,7 @@ class BlogController extends AbstractController
         $res = new BlogResponse();
         $res->title = $blog->title;
         $res->content = $blog->content;
-        $res->id = 1;
+        $res->teacherName = $blog->teacher->tname;
 
         $response = new JsonResponse($res);
         return $response;
